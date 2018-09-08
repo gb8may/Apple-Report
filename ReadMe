@@ -2,8 +2,20 @@ To use this script, clone the repository and add the Apple-Report directory to y
 
 When running, a file called Report.txt will automatically be created, with the list of applications installed in your OS X.
 
+
+-Download the git repository to your Desktop
+-Rename the directory to Apple-Report
+-Execute the app OSX_appList
+-Wait the create of the file Report.txt
+
 --
 
 Para utilizar este script, clone o repositório e adicione o diretório Apple-Report a sua área de trabalho.
 
 Ao executar, automaticamente será criado um arquivo chamado Report.txt, onde estará a lista de aplicativos instalados no seu OS X.
+
+
+-Baixe o repositório para o seu Desktop
+-Renomeie o diretório para Apple-Report
+-Execute o app OSX_appList
+-Aguarde a geração do arquivo Report.txt
