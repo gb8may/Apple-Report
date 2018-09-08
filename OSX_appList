@@ -1,0 +1,14 @@
+#############################
+#                           #
+# Created by Mayara Gouveia #
+#     gb8may@gmail.com      #    
+#                           #
+#############################
+
+#!/bin/bash
+
+
+ls /Applications > Report.txt
+cp $HOME/Report.txt $HOME/Desktop/Apple-Report/
+echo "Application list created successfully!"
+sleep 3
