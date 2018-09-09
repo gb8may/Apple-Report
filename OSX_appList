@@ -29,3 +29,4 @@ mkdir $HOME/Desktop/Apple-Report/$NAME
 cp -rf $HOME/Report.txt $HOME/Desktop/Apple-Report/$NAME/
 cp -rf $HOME/Softwares.txt $HOME/Desktop/Apple-Report/$NAME/
 echo "Application list created successfully!"
+sleep 1
