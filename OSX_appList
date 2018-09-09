@@ -14,19 +14,24 @@ stat -l * > $HOME/file1
 cut -d' ' -f6 -f7 -f8 -f9 -f10 -f11 $HOME/file1 > $HOME/file2
 cut -d' ' -f5 -f6 $HOME/file2 > $HOME/soft1
 sed 's/2018//g' $HOME/soft1 > $HOME/soft2
-sed 's/2017//g' $HOME/soft2 > $HOME/soft3
-sed 's/ //g' $HOME/soft3 > $HOME/Softwares.txt
+sed 's/2017//g' $HOME/soft2 > $HOME/Softwares.txt
+#sed 's/2017//g' $HOME/soft2 > $HOME/soft3
+#sed 's/ //g' $HOME/soft3 > $HOME/Softwares.txt
 system_profiler SPSoftwareDataType > $HOME/file3
 echo "Software Installed List:" > $HOME/file4
 cat $HOME/file3 $HOME/file4 $HOME/file2 > $HOME/Report.txt
-cp -rf $HOME/Softwares.txt $HOME/Desktop/Apple-Report/
-cp -rf $HOME/Report.txt $HOME/Desktop/Apple-Report/
 sed -n 10p $HOME/file3 > $HOME/cp-name1
 cut -d':' -f2 $HOME/cp-name1 > $HOME/cp-name2
 cut -d' ' -f2 $HOME/cp-name2 > $HOME/cp-name3
 export NAME=`cat $HOME/cp-name3`
 mkdir $HOME/Desktop/Apple-Report/$NAME
-cp -rf $HOME/Report.txt $HOME/Desktop/Apple-Report/$NAME/
+cp -rf $HOME/Report.txt $HOME/Desktop/Apple-Report/
 cp -rf $HOME/Softwares.txt $HOME/Desktop/Apple-Report/$NAME/
 echo "Application list created successfully!"
-sleep 1
+cd $HOME
+lista=Softwares.txt
+  for SW in `cat $lista`
+    do
+        cp /Applications/$SW/Contents/Info.plist /$HOME/Desktop/Apple-Report/$NAME/$SW.txt
+    done
+grep -R CFBundleShortVersionString $HOME/Desktop/Apple-Report/$NAME/ > $HOME/Desktop/Apple-Report/Versions.txt
