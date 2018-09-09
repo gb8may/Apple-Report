@@ -1,14 +1,16 @@
+#!/bin/bash
+
 #############################
 #                           #
 # Created by Mayara Gouveia #
-#     gb8may@gmail.com      #    
+#     gb8may@gmail.com      #
+#        Release 1.0        #
 #                           #
 #############################
 
-#!/bin/bash
-
-
-ls /Applications > Report.txt
+cd /Applications
+stat -l * > $HOME/file1
+cut -d' ' -f6 -f7 -f8 -f9 -f10 -f11 $HOME/file1 > $HOME/Report.txt
 cp $HOME/Report.txt $HOME/Desktop/Apple-Report/
 echo "Application list created successfully!"
-sleep 3
+sleep 1
